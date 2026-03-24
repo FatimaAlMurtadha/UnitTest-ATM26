@@ -16,12 +16,27 @@ public class Account
 
     public bool Withdraw(int amount)
     {
+        // validation
+        if (amount <= 0)
+        {
+            return false;
+        }
+        if (amount > Balance)
+        {
+            return false;
+        }
+
         Balance -= amount;
         return true;
     }
     
     public bool Deposit(int amount)
     {
+        // validate
+        if (amount <= 0)
+        {
+            return false;
+        }
         Balance += amount;
         return true;
     }
